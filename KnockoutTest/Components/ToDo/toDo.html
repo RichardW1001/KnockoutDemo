@@ -1,0 +1,28 @@
+﻿<div>
+    
+    <style>
+        
+        .completed {
+            color: lightgray;
+            text-decoration: line-through;
+        }
+
+    </style>
+
+    <p>This is an example of the "ToDo" MVC application backed by local storage.</p>
+
+    <ul data-bind="foreach: toDoList">
+        <li>
+            <span data-bind="text: description, css: { completed: completed() }"></span>
+            <input type="checkbox" data-bind="checked: completed" />
+            <button data-bind="click: function() { $parent.removeItem(this); }">Delete</button>
+        </li>
+    </ul>
+    <div data-bind="with: itemToAdd">
+        <p>Add a new item...</p>
+        <input type="text" data-bind="value: description, enterKey: $parent.addItem, valueUpdate: 'afterkeydown'"/>
+        <button data-bind="click: $parent.addItem, enable: $parent.validateBeforeAdd">Add</button>
+    </div>
+    <p><button data-bind="click: reset">Reset everything</button>
+    </p>
+</div>

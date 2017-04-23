@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Knockout Test</title>
+
+    <style>
+        * {
+            font-family: 'arial'
+        }
+    </style>
+</head>
+<body>
+
+    <p>Choose a demo:</p>
+
+    <label>Money <input type="radio" name="currentScreen" data-bind="checked: currentScreen" value="money" /></label>
+    <label>ToDo <input type="radio" name="currentScreen" data-bind="checked: currentScreen" value="toDo" /></label>
+
+    <div data-bind="component: currentScreen"></div>
+
+
+    <script src="Scripts/config.js"></script>
+    <script data-main="main" src="Scripts/require.js"></script>
+
+</body>
+</html>

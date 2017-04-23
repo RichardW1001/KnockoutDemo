@@ -1,0 +1,11 @@
+﻿<div>
+    <p>Demo of a "money" binding that renders input as a currency amount.</p>
+    <p>There is validation in place enforcing a value between 0 and 50.</p>
+    <p>Note that there is a bug in the requirements; specifying a minimum greater than 0 is
+        incompatible with the requirement to default to 0 if an empty value is provided and the requirement
+        to revert to last value as the default value will fail validation and get into a logical loop!
+        I have not attempted to deal with this edge case.</p>
+
+    <input type="text" data-bind="money: moneyValue, max: 50, min: 0"/>
+    <span type="text" data-bind="text: moneyValue"></span>
+</div>
